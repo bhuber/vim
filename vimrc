@@ -44,16 +44,21 @@ let g:pymode_options_indent = 0
 
 let g:snips_author = 'Bennet Huber'
 
-" let g:SuperTabMappingForward = '<c-space>'
-" let g:SuperTabMappingBackward = '<s-c-space>'
+let g:syntastic_python_checkers=[]
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_auto_loc_list=1
 
-autocmd FileType make
-    \ setlocal noexpandtab
+autocmd FileType make setlocal noexpandtab
 
-autocmd FileType html
-    \ setlocal ts=2
-    \ setlocal sts=2
-    \ setlocal sw=2
+augroup myHtml
+    au!
+    au FileType html setlocal ts=2
+    au FileType html setlocal sts=2
+    au FileType html setlocal sw=2
+augroup END
+
+
 
 " Enable folding
 set foldmethod=indent
