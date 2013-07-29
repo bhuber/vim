@@ -49,13 +49,21 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=1
 
+" Tabs are load bearing in makefiles
 autocmd FileType make setlocal noexpandtab
 
+" Set html files to have 2 space tabs
 augroup myHtml
     au!
-    au FileType html setlocal ts=2
-    au FileType html setlocal sts=2
-    au FileType html setlocal sw=2
+    au FileType html,htmldjango setlocal ts=2
+    au FileType html,htmldjango setlocal sts=2
+    au FileType html,htmldjango setlocal sw=2
+augroup END
+
+" Autoload vimrc changes
+augroup vimrc
+    au!
+    au BufWritePost ~/.vimrc so $MYVIMRC
 augroup END
 
 
@@ -65,11 +73,8 @@ set foldmethod=indent
 set foldlevel=99
 
 " Shift-Tab un-indents
-inoremap <S-tab> <c-d>
-
-" Enable supertab context sensitivity + code completion
-" au FileType python set omnifunc=pythoncomplete#Complete
-" let g:SuperTabDefaultCompletionType = "context"
+nmap <S-Tab> <<
+imap <S-Tab> <Esc><<i
 
 "Latex Stuff
 "http://vim-latex.sourceforge.net/documentation/latex-suite/recommended-settings.html
