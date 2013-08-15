@@ -4,20 +4,94 @@ set number
 set smartindent
 set expandtab
 set ts=4
+set sts=4
 set shiftwidth=4
-set bs=2
+set backspace=indent,eol,start
 set hlsearch
 set hidden 
 set wrap
+set nomodeline     " modelines are a useless security hole
+
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set visualbell
+set ttyfast
+set ruler
+set laststatus=2
+set relativenumber
+set undofile
+
+" Ignore case on search
+set ignorecase
+set smartcase
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Allow comment formatting, auto-increment lists, don't break after 1-letter
+" words
+set formatoptions+=qn1
+
+set colorcolumn=100
+
+if v:version >= 730
+    set undofile                " keep a persistent backup file
+    set undodir=~/.vim/undo,~/tmp,/tmp
+endif
+
+" Enable magic searches
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
+
+" Better window movement
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Fuck help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Save on buffer switch
+au FocusLost * :w
+
+" Toggle quickfix
+nnoremap <C-q> :call <SID>QuickfixToggle()<cr>
+
+let g:quickfix_is_open = 0
+
+function! s:QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+        execute g:quickfix_return_to_window . "wincmd w"
+    else
+        let g:quickfix_return_to_window = winnr()
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
 
 
 " Buffer switching
-"noremap <C-TAB> :bnext<CR>
-"noremap <C-S-TAB> :bprev<CR>
+noremap <C-TAB> :bnext<CR>
+noremap <C-S-TAB> :bprev<CR>
 
 " Note: <leader> is '\'
 " Tasklist shortcut to find TODO/FIXME
-map <leader>td <Plug>TaskList
+map <leader>d <Plug>TaskList
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 map <leader>n :NERDTreeToggle<CR>
@@ -37,7 +111,6 @@ filetype plugin indent on
 syntax on
 
 let g:pymode_folding = 0
-" E222,E202,E401,
 let g:pymode_lint_ignore = "E501,W391"
 let g:pymode_breakpoint_key = ""
 let g:pymode_options_indent = 0
@@ -66,11 +139,18 @@ augroup vimrc
     au BufWritePost ~/.vimrc so $MYVIMRC
 augroup END
 
+" Set F2 to toggle indent fixing for pasting
+set pastetoggle=<F2>
 
+"Show tabs and tailing space
+set list
+set listchars=tab:>.,trail:.
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
+" Backups/temp files in single directory
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
 
 " Shift-Tab un-indents
 nmap <S-Tab> <<
