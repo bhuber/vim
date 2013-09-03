@@ -1,3 +1,12 @@
+let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets"]
+
+" Pathogen load
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype plugin indent on
+syntax enable
+
 set nocp
 set ruler
 set number
@@ -85,9 +94,6 @@ function! s:QuickfixToggle()
 endfunction
 
 
-" Buffer switching
-noremap <C-TAB> :bnext<CR>
-noremap <C-S-TAB> :bprev<CR>
 
 " Note: <leader> is '\'
 " Tasklist shortcut to find TODO/FIXME
@@ -101,23 +107,15 @@ map <leader>n :NERDTreeToggle<CR>
 noremap <Leader>t :CommandT<CR>
 noremap <Leader>b :CommandTBuffer<CR>
 
-let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets"]
-
-" Pathogen load
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype plugin indent on
-syntax on
-
 let g:pymode_folding = 0
+let g:pymode_lint = 0
 let g:pymode_lint_ignore = "E501,W391"
 let g:pymode_breakpoint_key = ""
 let g:pymode_options_indent = 0
 
 let g:snips_author = 'Bennet Huber'
 
-let g:syntastic_python_checkers=[]
+let g:syntastic_python_checkers=['flake8', 'pylint']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=1
@@ -173,4 +171,9 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
+set relativenumber
+set tags=tags;/     " Traverse directory upward when looking for tags
 
+" Buffer switching
+noremap <C-TAB> :bnext<CR>
+noremap <C-S-TAB> :bprev<CR>
