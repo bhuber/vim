@@ -51,7 +51,7 @@ set formatoptions+=qn1
 
 set colorcolumn=100
 
-if v:version >= 730
+if v:version >= 703
     set undofile                " keep a persistent backup file
     set undodir=~/.vim/undo,~/tmp,/tmp
 endif
