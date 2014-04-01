@@ -87,3 +87,9 @@
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
     branch = master
+[submodule "bundle/vim-ansible-yaml"]
+	path = bundle/vim-ansible-yaml
+	url = git://github.com/chase/vim-ansible-yaml.git
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = git@github.com:elzr/vim-json.git
