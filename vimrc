@@ -1,7 +1,7 @@
-let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets"]
+let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript"]
 
 " Pathogen load
-filetype off
+" filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
@@ -10,7 +10,7 @@ syntax enable
 set nocp
 set ruler
 set number
-set smartindent
+" set smartindent
 set expandtab
 set ts=4
 set sts=4
@@ -23,7 +23,7 @@ set nomodeline     " modelines are a useless security hole
 
 set encoding=utf-8
 set scrolloff=3
-set autoindent
+" set autoindent
 set showmode
 set showcmd
 set hidden
@@ -107,6 +107,8 @@ map <leader>n :NERDTreeToggle<CR>
 noremap <Leader>t :CommandT<CR>
 noremap <Leader>b :CommandTBuffer<CR>
 
+let g:ropevim_enable_shortcuts = 1
+
 let g:pymode_folding = 0
 let g:pymode_lint = 0
 let g:pymode_lint_ignore = "E501,W391"
@@ -136,6 +138,15 @@ augroup vimrc
     au!
     au BufWritePost ~/.vimrc so $MYVIMRC
 augroup END
+
+" Set json ft to json so vim-json recognizes it
+autocmd BufNewFile,BufRead *.json set ft=json
+
+" I like my json raw and uncut
+let g:vim_json_syntax_conceal = 0
+
+" Make markdown files wrap properly
+au FileType markdown setlocal tw=100 formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=t
 
 " Set F2 to toggle indent fixing for pasting
 set pastetoggle=<F2>
@@ -171,9 +182,10 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-set relativenumber
 set tags=tags;/     " Traverse directory upward when looking for tags
 
 " Buffer switching
 noremap <C-TAB> :bnext<CR>
 noremap <C-S-TAB> :bprev<CR>
+
+set relativenumber
