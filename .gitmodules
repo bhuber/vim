@@ -93,3 +93,6 @@
 [submodule "bundle/vim-json"]
 	path = bundle/vim-json
 	url = git@github.com:elzr/vim-json.git
+[submodule "bundle/coq.vim"]
+	path = bundle/coq.vim
+	url = https://github.com/jvoorhis/coq.vim.git
