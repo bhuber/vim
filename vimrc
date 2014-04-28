@@ -117,7 +117,7 @@ let g:pymode_options_indent = 0
 
 let g:snips_author = 'Bennet Huber'
 
-let g:syntastic_python_checkers=['flake8', 'pylint']
+let g:syntastic_python_checkers=['flake8']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=1
