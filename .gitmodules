@@ -96,3 +96,9 @@
 [submodule "bundle/coq.vim"]
 	path = bundle/coq.vim
 	url = https://github.com/jvoorhis/coq.vim.git
+[submodule "bundle/coquille"]
+	path = bundle/coquille
+	url = https://github.com/trefis/coquille.git
+[submodule "bundle/vimbufsync"]
+	path = bundle/vimbufsync
+	url = git@github.com:def-lkb/vimbufsync.git
