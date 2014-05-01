@@ -1,9 +1,10 @@
-let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript"]
+let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
 
 " Pathogen load
-" filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+filetype off
+execute pathogen#infect()
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
 filetype plugin indent on
 syntax enable
 
@@ -132,6 +133,9 @@ augroup myHtml
     au FileType html,htmldjango setlocal sts=2
     au FileType html,htmldjango setlocal sw=2
 augroup END
+
+" COQ stuff
+let g:CoqIDEDefaultMap = 1
 
 " Autoload vimrc changes
 augroup vimrc
