@@ -330,7 +330,7 @@ endfunction
 "
 "
 highlight CoqIDEDebug ctermbg=LightBlue guibg=LightBlue
-highlight SentToCoq ctermbg=LightGreen guibg=LightGreen
+highlight SentToCoq ctermbg=Black guibg=Black
 highlight WillSendToCoq ctermbg=Yellow guibg=Yellow
 highlight link CoqTopError Error
 
