@@ -57,7 +57,7 @@
     branch = master
 [submodule "bundle/ropevim"]
 	path = bundle/ropevim
-	url = https://github.com/sontek/rope-vim.git
+	url = https://github.com/python-rope/ropevim
     branch = master
 [submodule "bundle/commentary"]
 	path = bundle/commentary
