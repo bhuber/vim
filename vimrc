@@ -1,4 +1,6 @@
-let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
+source /apollo/env/envImprovement/var/vimrc
+
+let g:pathogen_disabled = ["supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
 
 " Pathogen load
 filetype off
@@ -50,7 +52,7 @@ set foldlevel=99
 " words
 set formatoptions+=qn1
 
-set colorcolumn=100
+" set colorcolumn=100
 
 if v:version >= 703
     set undofile                " keep a persistent backup file
@@ -193,3 +195,4 @@ noremap <C-TAB> :bnext<CR>
 noremap <C-S-TAB> :bprev<CR>
 
 set relativenumber
+set t_ut=
