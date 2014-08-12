@@ -1,4 +1,6 @@
-let g:pathogen_disabled = ["minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
+let g:pathogen_disabled = ["ropevim", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
+
+let g:pep8_map = ''
 
 " Pathogen load
 filetype off
