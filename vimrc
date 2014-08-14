@@ -1,6 +1,14 @@
+let g:useNinjaTagList=1     " Use TagList plugin
+"
+" Disable Align plugin, it poops all over leader keymappings
+let g:loaded_align=1
+let g:loaded_alignmaps=1
+
 source /apollo/env/envImprovement/var/vimrc
 
-let g:pathogen_disabled = ["supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
+
+let g:pathogen_disabled = ["ropevim", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
+let g:pep8_map = ''
 
 " Pathogen load
 filetype off
@@ -53,6 +61,10 @@ set foldlevel=99
 set formatoptions+=qn1
 
 " set colorcolumn=100
+
+" Fix leader mappings
+set timeout
+set timeoutlen=800
 
 if v:version >= 703
     set undofile                " keep a persistent backup file
@@ -107,8 +119,8 @@ map <leader>n :NERDTreeToggle<CR>
 
 " These are for buffer switching
 " Python-mode overrides <Leader>b
-noremap <Leader>t :CommandT<CR>
-noremap <Leader>b :CommandTBuffer<CR>
+noremap <Leader>tt :CommandT<CR>
+map <Leader>b :CommandTBuffer<CR>
 
 let g:ropevim_enable_shortcuts = 1
 
