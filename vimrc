@@ -1,11 +1,22 @@
 let g:useNinjaTagList=1     " Use TagList plugin
-"
+
 " Disable Align plugin, it poops all over leader keymappings
 let g:loaded_align=1
 let g:loaded_alignmaps=1
 
-source /apollo/env/envImprovement/var/vimrc
+" Disable *most* of the annoying latex-suite mappings
+" See http://tex.stackexchange.com/questions/62134/how-to-disable-all-vim-latex-mappings
+let g:Tex_SmartKeyBS = 0
+let g:Tex_SmartKeyQuote = 0
+let g:Tex_SmartKeyDot = 0
+let g:Tex_Leader = '`tex'
+let g:Tex_Leader2 = ',tex'
+let g:Imap_UsePlaceHolders = 0
+let g:Imap_FreezeImap=1
+let g:Imap_StickyPlaceHolders = 0
 
+
+source /apollo/env/envImprovement/var/vimrc
 
 let g:pathogen_disabled = ["ropevim", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
 let g:pep8_map = ''
@@ -76,7 +87,7 @@ nnoremap / /\v
 vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
-
+"
 " Better window movement
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
