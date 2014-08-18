@@ -130,7 +130,7 @@ map <leader>n :NERDTreeToggle<CR>
 
 " These are for buffer switching
 " Python-mode overrides <Leader>b
-noremap <Leader>tt :CommandT<CR>
+noremap <Leader>t :CommandT<CR>
 map <Leader>b :CommandTBuffer<CR>
 
 let g:ropevim_enable_shortcuts = 1
@@ -150,6 +150,9 @@ let g:syntastic_auto_loc_list=1
 
 " Tabs are load bearing in makefiles
 autocmd FileType make setlocal noexpandtab
+
+" Convention is to use real tabs in ion files
+autocmd FileType ion setlocal noexpandtab
 
 " Set html files to have 2 space tabs
 augroup myHtml
