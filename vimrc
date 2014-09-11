@@ -1,6 +1,5 @@
-let g:pathogen_disabled = ["ropevim", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
-
 let g:pep8_map = ''
+let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
 
 " Pathogen load
 filetype off
@@ -8,6 +7,9 @@ execute pathogen#infect()
 " call pathogen#runtime_append_all_bundles()
 " call pathogen#helptags()
 filetype plugin indent on
+
+set background=dark
+colorscheme solarized
 syntax enable
 
 set nocp
