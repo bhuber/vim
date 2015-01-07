@@ -6,50 +6,24 @@ endif
 runtime bundle/pathogen/autoload/pathogen.vim
 
 
-""""""""""""""""""""""""""""""""""'
-
+""""""""""""""""""""""""""""""""""
 
 " # /apollo/env/envImprovement/var/vimruntimehook
+" Contents here for reference
 " let g:ApolloRoot = "/apollo/env/envImprovement"
 " set runtimepath=$HOME/.vim,/apollo/env/envImprovement/vim/amazon/brazil-config,/apollo/env/envImprovement/vim/amazon/brazil_inc_path,/apollo/env/envImprovement/vim/amazon/dat,/apollo/env/envImprovement/vim/amazon/FLLog,/apollo/env/envImprovement/vim/amazon/ion,/apollo/env/envImprovement/vim/amazon/mail-after,/apollo/env/envImprovement/vim/amazon/mosel,/apollo/env/envImprovement/vim/amazon/object,/apollo/env/envImprovement/vim/amazon/Perforce,/apollo/env/envImprovement/vim/amazon/s3,/apollo/env/envImprovement/vim/amazon/syntax-override-mason,/apollo/env/envImprovement/vim/amazon/syntax-override-perl,/apollo/env/envImprovement/vim/amazon/syntax-override-ruby,/apollo/env/envImprovement/vim/amazon/wiki_browser,/apollo/env/envImprovement/vim,$VIMRUNTIME,/apollo/env/envImprovement/vim/amazon/mail-after/after,/apollo/env/envImprovement/vim/after,$HOME/.vim/after
-" 
-" 
-" set runtimepath=$HOME/.vim
-" /apollo/env/envImprovement/vim/amazon/brazil-config
-" /apollo/env/envImprovement/vim/amazon/brazil_inc_path
-" /apollo/env/envImprovement/vim/amazon/dat
-" /apollo/env/envImprovement/vim/amazon/FLLog
-" /apollo/env/envImprovement/vim/amazon/ion
-" /apollo/env/envImprovement/vim/amazon/mail-after
-" /apollo/env/envImprovement/vim/amazon/mosel
-" /apollo/env/envImprovement/vim/amazon/object
-" /apollo/env/envImprovement/vim/amazon/Perforce
-" /apollo/env/envImprovement/vim/amazon/s3
-" /apollo/env/envImprovement/vim/amazon/syntax-override-mason
-" /apollo/env/envImprovement/vim/amazon/syntax-override-perl
-" /apollo/env/envImprovement/vim/amazon/syntax-override-ruby
-" /apollo/env/envImprovement/vim/amazon/wiki_browser
-" /apollo/env/envImprovement/vim
-" $VIMRUNTIME
-" $HOME/.vim/after
+
+""""""""""""""""""""""""""""""""""
 
 let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
     \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree",
+    \"pep8", "nerdtree",
     \"latex-suite", "/apollo/env/envImprovement/vim/plugin",
     \"/apollo/env/envImprovement/vim/ftplugin", "Perforce"
     \]
 
-""""""""""""""""""""""""""""""""""
-
+" Needs to be set for some amazon plugins
 let g:ApolloRoot = "/apollo/env/envImprovement"
-
-
-" Load envImprovements vimrc
-" source /apollo/env/envImprovement/var/vimrc
-
-" set t_Co=256		" Sets number of terminal colors
-
-let g:pep8_map = ''
 
 let g:solarized_contrast = "high"
 " let g:solarized_underline = 0
@@ -72,7 +46,6 @@ hi Normal ctermbg=NONE
 " Set vim settings to sane values
 set ruler
 set number
-" set smartindent
 set expandtab
 set ts=4
 set sts=4
@@ -258,8 +231,9 @@ EOF
 set tags=tags;/     " Traverse directory upward when looking for tags
 
 " Buffer switching
-noremap <C-TAB> :bnext<CR>
-noremap <C-S-TAB> :bprev<CR>
+noremap <leader><TAB> :bnext<CR>
+noremap <leader><S-TAB>  :bprev<CR>
 
+" Due to a vim bug this must be set at the end of vimrc
 set relativenumber
 set t_ut=
