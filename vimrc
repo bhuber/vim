@@ -2,25 +2,9 @@ if has('vim_starting')
     set nocompatible " Be iMproved
 endif
 
-let g:useNinjaTagList=0     " Do not use TagList plugin
-let loaded_yankring = 20    " Do no use Yankring
-let loaded_screenpaste = 1  " Do not use screenpaste
-let loaded_rcsvers = 1      " Do not use rcsvers
+" Find pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
 
-" Disable Align plugin, it poops all over leader keymappings
-let g:loaded_align=1
-let g:loaded_alignmaps=1
-
-" Disable *most* of the annoying latex-suite mappings
-" See http://tex.stackexchange.com/questions/62134/how-to-disable-all-vim-latex-mappings
-let g:Tex_SmartKeyBS = 0
-let g:Tex_SmartKeyQuote = 0
-let g:Tex_SmartKeyDot = 0
-let g:Tex_Leader = '`tex'
-let g:Tex_Leader2 = ',tex'
-let g:Imap_UsePlaceHolders = 0
-let g:Imap_FreezeImap=1
-let g:Imap_StickyPlaceHolders = 0
 
 """"""""""""""""""""""""""""""""""'
 
@@ -49,17 +33,14 @@ let g:Imap_StickyPlaceHolders = 0
 " $VIMRUNTIME
 " $HOME/.vim/after
 
-"let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
-"    \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree",
-"    \"latex-suite", "/apollo/env/envImprovement/vim/plugin",
-"    \"/apollo/env/envImprovement/vim/ftplugin", "Perforce"
-"    \]
+let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
+    \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree",
+    \"latex-suite", "/apollo/env/envImprovement/vim/plugin",
+    \"/apollo/env/envImprovement/vim/ftplugin", "Perforce"
+    \]
 
 """"""""""""""""""""""""""""""""""
 
-let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
-    \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree"
-    \]
 let g:ApolloRoot = "/apollo/env/envImprovement"
 
 
@@ -78,9 +59,8 @@ set background=dark		" Must be set before loading solarized
 
 " Pathogen load
 filetype off
-"execute pathogen#infect("/apollo/env/envImprovement/vim", "/apollo/env/envImprovement/vim/amazon/{}/{}", "bundle/{}")
+execute pathogen#infect("/apollo/env/envImprovement/vim/{}", "/apollo/env/envImprovement/vim/amazon/{}", "bundle/{}")
 "call pathogen#helptags()
-echo pathogen#expand("foo")
 filetype plugin indent on
 
 " Set up colors
