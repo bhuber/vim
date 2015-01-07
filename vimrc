@@ -1,4 +1,11 @@
-let g:useNinjaTagList=1     " Use TagList plugin
+if has('vim_starting')
+    set nocompatible " Be iMproved
+endif
+
+let g:useNinjaTagList=0     " Do not use TagList plugin
+let loaded_yankring = 20    " Do no use Yankring
+let loaded_screenpaste = 1  " Do not use screenpaste
+let loaded_rcsvers = 1      " Do not use rcsvers
 
 " Disable Align plugin, it poops all over leader keymappings
 let g:loaded_align=1
@@ -15,24 +22,74 @@ let g:Imap_UsePlaceHolders = 0
 let g:Imap_FreezeImap=1
 let g:Imap_StickyPlaceHolders = 0
 
+""""""""""""""""""""""""""""""""""'
 
-source /apollo/env/envImprovement/var/vimrc
+
+" # /apollo/env/envImprovement/var/vimruntimehook
+" let g:ApolloRoot = "/apollo/env/envImprovement"
+" set runtimepath=$HOME/.vim,/apollo/env/envImprovement/vim/amazon/brazil-config,/apollo/env/envImprovement/vim/amazon/brazil_inc_path,/apollo/env/envImprovement/vim/amazon/dat,/apollo/env/envImprovement/vim/amazon/FLLog,/apollo/env/envImprovement/vim/amazon/ion,/apollo/env/envImprovement/vim/amazon/mail-after,/apollo/env/envImprovement/vim/amazon/mosel,/apollo/env/envImprovement/vim/amazon/object,/apollo/env/envImprovement/vim/amazon/Perforce,/apollo/env/envImprovement/vim/amazon/s3,/apollo/env/envImprovement/vim/amazon/syntax-override-mason,/apollo/env/envImprovement/vim/amazon/syntax-override-perl,/apollo/env/envImprovement/vim/amazon/syntax-override-ruby,/apollo/env/envImprovement/vim/amazon/wiki_browser,/apollo/env/envImprovement/vim,$VIMRUNTIME,/apollo/env/envImprovement/vim/amazon/mail-after/after,/apollo/env/envImprovement/vim/after,$HOME/.vim/after
+" 
+" 
+" set runtimepath=$HOME/.vim
+" /apollo/env/envImprovement/vim/amazon/brazil-config
+" /apollo/env/envImprovement/vim/amazon/brazil_inc_path
+" /apollo/env/envImprovement/vim/amazon/dat
+" /apollo/env/envImprovement/vim/amazon/FLLog
+" /apollo/env/envImprovement/vim/amazon/ion
+" /apollo/env/envImprovement/vim/amazon/mail-after
+" /apollo/env/envImprovement/vim/amazon/mosel
+" /apollo/env/envImprovement/vim/amazon/object
+" /apollo/env/envImprovement/vim/amazon/Perforce
+" /apollo/env/envImprovement/vim/amazon/s3
+" /apollo/env/envImprovement/vim/amazon/syntax-override-mason
+" /apollo/env/envImprovement/vim/amazon/syntax-override-perl
+" /apollo/env/envImprovement/vim/amazon/syntax-override-ruby
+" /apollo/env/envImprovement/vim/amazon/wiki_browser
+" /apollo/env/envImprovement/vim
+" $VIMRUNTIME
+" $HOME/.vim/after
+
+"let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
+"    \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree",
+"    \"latex-suite", "/apollo/env/envImprovement/vim/plugin",
+"    \"/apollo/env/envImprovement/vim/ftplugin", "Perforce"
+"    \]
+
+""""""""""""""""""""""""""""""""""
+
+let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
+    \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree"
+    \]
+let g:ApolloRoot = "/apollo/env/envImprovement"
+
+
+" Load envImprovements vimrc
+" source /apollo/env/envImprovement/var/vimrc
+
+" set t_Co=256		" Sets number of terminal colors
 
 let g:pep8_map = ''
-let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
+
+let g:solarized_contrast = "high"
+" let g:solarized_underline = 0
+" let g:solarized_termcolors = 256
+
+set background=dark		" Must be set before loading solarized
 
 " Pathogen load
 filetype off
-execute pathogen#infect()
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
+"execute pathogen#infect("/apollo/env/envImprovement/vim", "/apollo/env/envImprovement/vim/amazon/{}/{}", "bundle/{}")
+"call pathogen#helptags()
+echo pathogen#expand("foo")
 filetype plugin indent on
 
-set background=dark
+" Set up colors
 colorscheme solarized
-syntax enable
+syntax on
+hi Normal ctermbg=NONE
 
-set nocp
+
+" Set vim settings to sane values
 set ruler
 set number
 " set smartindent
@@ -42,7 +99,7 @@ set sts=4
 set shiftwidth=4
 set backspace=indent,eol,start
 set hlsearch
-set hidden 
+set hidden
 set wrap
 set nomodeline     " modelines are a useless security hole
 
@@ -60,7 +117,6 @@ set ttyfast
 set ruler
 set laststatus=2
 set relativenumber
-set undofile
 
 " Ignore case on search
 set ignorecase
@@ -75,6 +131,7 @@ set foldlevel=99
 set formatoptions+=qn1
 
 " set colorcolumn=100
+set cursorline
 
 " Fix leader mappings
 set timeout
@@ -129,12 +186,12 @@ endfunction
 map <leader>d <Plug>TaskList
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
-map <leader>n :NERDTreeToggle<CR>
+" map <leader>n :NERDTreeToggle<CR>
 
 " These are for buffer switching
 " Python-mode overrides <Leader>b
 noremap <Leader>t :CommandT<CR>
-map <Leader>b :CommandTBuffer<CR>
+noremap <Leader>b :CommandTBuffer<CR>
 
 let g:ropevim_enable_shortcuts = 1
 
@@ -169,10 +226,11 @@ augroup END
 let g:CoqIDEDefaultMap = 1
 
 " Autoload vimrc changes
-augroup vimrc
-    au!
-    au BufWritePost ~/.vimrc so $MYVIMRC
-augroup END
+" Solarized breaks this :(
+"augroup vimrc
+    "au!
+    "au BufWritePost ~/.vimrc|~/.vim/vimrc so $MYVIMRC
+"augroup END
 
 " Set json ft to json so vim-json recognizes it
 autocmd BufNewFile,BufRead *.json set ft=json
