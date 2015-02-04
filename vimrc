@@ -112,6 +112,12 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" Just lost 20 minutes from accidentally changing my sql query >:(
+noremap <C-a> <NOP>
+noremap! <C-a> <NOP>
+noremap <C-x> <NOP>
+noremap! <C-x> <NOP>
+
 " Save on buffer switch
 au FocusLost * :w
 
@@ -132,6 +138,14 @@ function! s:QuickfixToggle()
     endif
 endfunction
 
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 
 " Note: <leader> is '\'
@@ -156,7 +170,6 @@ let g:pymode_options_indent = 0
 
 let g:snips_author = 'Bennet Huber'
 
-let g:syntastic_python_checkers=['flake8']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=1
