@@ -246,6 +246,8 @@ set tags=tags;/     " Traverse directory upward when looking for tags
 " Buffer switching
 noremap <leader><TAB> :bnext<CR>
 noremap <leader><S-TAB>  :bprev<CR>
+" Delete current buffer without closing window
+nnoremap <C-W>o :bp\|bd #<CR>
 
 " Due to a vim bug this must be set at the end of vimrc
 set relativenumber
