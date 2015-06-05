@@ -90,6 +90,9 @@ set cursorline
 set timeout
 set timeoutlen=800
 
+" CommandT ignore build folders
+set wildignore+=**/build/*
+
 if v:version >= 703
     set undofile                " keep a persistent backup file
     set undodir=~/.vim/undo,~/tmp,/tmp
