@@ -17,6 +17,7 @@ runtime bundle/pathogen/autoload/pathogen.vim
 
 let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
     \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree",
+    \"vim-airline",
     \"pep8", "nerdtree",
     \"latex-suite", "/apollo/env/envImprovement/vim/plugin",
     \"/apollo/env/envImprovement/vim/ftplugin", "Perforce"
@@ -57,6 +58,8 @@ set wrap
 set nomodeline     " modelines are a useless security hole
 
 set encoding=utf-8
+set termencoding=utf-8
+set fillchars+=stl:\ ,stlnc:\
 set scrolloff=3
 " set autoindent
 set showmode
@@ -176,6 +179,32 @@ let g:snips_author = 'Bennet Huber'
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=1
+
+" vim-airline
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+"let g:airline_symbols.space = "\ua0"
+"set guifont=Inconsolata-dz\ for\ Powerline
+
+" vim-expand-region
+" il:  'inside line'. Available through https://github.com/kana/vim-textobj-line
+" ie:  'entire file'. Available through https://github.com/kana/vim-textobj-entire
+let g:expand_region_text_objects = {
+      \ 'iw'  :1,
+      \ 'iW'  :0,
+      \ 'i"'  :1,
+      \ 'i''' :1,
+      \ 'i]'  :1,
+      \ 'ib'  :1,
+      \ 'iB'  :1,
+      \ 'il'  :0,
+      \ 'ip'  :1,
+      \ 'ie'  :0,
+      \ }
 
 " Tabs are load bearing in makefiles
 autocmd FileType make setlocal noexpandtab
