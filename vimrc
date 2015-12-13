@@ -26,7 +26,8 @@ let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gu
 " Needs to be set for some amazon plugins
 let g:ApolloRoot = "/apollo/env/envImprovement"
 
-let g:solarized_contrast = "high"
+" let g:solarized_contrast = "high"
+" let g:solarized_visibility = "low"
 " let g:solarized_underline = 0
 " let g:solarized_termcolors = 256
 
@@ -176,9 +177,12 @@ let g:pymode_options_indent = 0
 
 let g:snips_author = 'Bennet Huber'
 
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+let g:syntastic_error_symbol='E'
+let g:syntastic_warning_symbol='W'
 let g:syntastic_auto_loc_list=1
+let g:syntastic_zsh_zsh_exec = '/apollo/env/envImprovement/bin/zsh'
+let g:syntastic_zsh_exec = '/apollo/env/envImprovement/bin/zsh'
+let s:zsh_executable = '/apollo/env/envImprovement/bin/zsh'
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -244,7 +248,7 @@ set pastetoggle=<F2>
 
 "Show tabs and tailing space
 set list
-set listchars=tab:>.,trail:.
+set listchars=tab:▸\ ,trail:.
 
 " Backups/temp files in single directory
 set backup
