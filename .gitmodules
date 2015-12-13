@@ -108,6 +108,7 @@
 [submodule "bundle/pathogen"]
 	path = bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+    branch = master
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline
