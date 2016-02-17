@@ -215,6 +215,7 @@ autocmd FileType make setlocal noexpandtab
 
 " Convention is to use real tabs in ion files
 autocmd FileType ion setlocal noexpandtab
+au BufRead,BufNewFile *.dp setfiletype ion
 
 " Set html files to have 2 space tabs
 augroup myHtml
@@ -284,6 +285,23 @@ noremap <leader><TAB> :bnext<CR>
 noremap <leader><S-TAB>  :bprev<CR>
 " Delete current buffer without closing window
 nnoremap <C-W>o :bp\|bd #<CR>
+
+
+let g:expand_region_text_objects_ion = {
+      \ 'iw'  :0,
+      \ 'iW'  :0,
+      \ 'i"'  :0,
+      \ 'i''' :0,
+      \ 'i]'  :1,
+      \ 'ib'  :1,
+      \ 'iB'  :1,
+      \ 'il'  :0,
+      \ 'ip'  :0,
+      \ 'ie'  :0,
+      \ 'a]'  :1,
+      \ 'ab'  :1,
+      \ 'aB'  :1,
+      \ }
 
 " Due to a vim bug this must be set at the end of vimrc
 set relativenumber
