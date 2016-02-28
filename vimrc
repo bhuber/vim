@@ -42,6 +42,7 @@ filetype plugin indent on
 " Set up colors
 colorscheme solarized
 syntax on
+syntax sync minlines = 500
 hi Normal ctermbg=NONE
 
 
