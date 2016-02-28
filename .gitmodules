@@ -118,3 +118,9 @@
 [submodule "bundle/vim-expand-region"]
 	path = bundle/vim-expand-region
 	url = git@github.com:terryma/vim-expand-region.git
+[submodule "bundle/vim-fusion"]
+	path = bundle/vim-fusion
+	url = ssh://git.amazon.com:2222/pkg/VimFusion
+[submodule "bundle/DatapathCommunityVimPlugin"]
+	path = bundle/DatapathCommunityVimPlugin
+	url = ssh://git.amazon.com:2222/pkg/DatapathCommunityVimPlugin
