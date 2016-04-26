@@ -1,6 +1,8 @@
 let g:pep8_map = ''
 let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
 
+set background=dark
+
 " Pathogen load
 filetype off
 execute pathogen#infect()
@@ -8,10 +10,11 @@ execute pathogen#infect()
 " call pathogen#helptags()
 filetype plugin indent on
 
-set background=dark
-" colorscheme solarized
-colorscheme default
-syntax enable
+colorscheme solarized
+" colorscheme default
+syntax on
+syntax sync minlines=500
+hi Normal ctermbg=NONE
 
 set nocp
 set ruler
