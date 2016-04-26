@@ -28,6 +28,7 @@ set backspace=indent,eol,start
 set hlsearch
 set hidden 
 set wrap
+set nofoldenable
 set nomodeline     " modelines are a useless security hole
 
 set encoding=utf-8
