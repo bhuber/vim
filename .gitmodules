@@ -105,3 +105,9 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/DatapathCommunityVimPlugin"]
+	path = bundle/DatapathCommunityVimPlugin
+	url = ssh://git.amazon.com:2222/pkg/DatapathCommunityVimPlugin
+[submodule "bundle/VimIon"]
+	path = bundle/VimIon
+	url = ssh://git.amazon.com:2222/pkg/VimIon
