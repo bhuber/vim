@@ -138,9 +138,9 @@ autocmd FileType make setlocal noexpandtab
 " Set html files to have 2 space tabs
 augroup myHtml
     au!
-    au FileType html,htmldjango setlocal ts=2
-    au FileType html,htmldjango setlocal sts=2
-    au FileType html,htmldjango setlocal sw=2
+    au FileType html,htmldjango,ion,dp setlocal ts=2
+    au FileType html,htmldjango,ion,dp setlocal sts=2
+    au FileType html,htmldjango,ion,dp setlocal sw=2
 augroup END
 
 " COQ stuff
