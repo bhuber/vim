@@ -1,5 +1,5 @@
 let g:pep8_map = ''
-let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille"]
+let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille", "ultisnips"]
 
 set background=dark
 
@@ -26,7 +26,7 @@ set sts=4
 set shiftwidth=4
 set backspace=indent,eol,start
 set hlsearch
-set hidden 
+set hidden
 set wrap
 set nofoldenable
 set nomodeline     " modelines are a useless security hole
@@ -39,10 +39,11 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/workspace/**/build
 set visualbell
 set ttyfast
 set ruler
+set cursorline
 set laststatus=2
 set relativenumber
 set undofile
