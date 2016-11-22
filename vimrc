@@ -156,6 +156,9 @@ augroup END
 " Set json ft to json so vim-json recognizes it
 autocmd BufNewFile,BufRead *.json set ft=json
 
+" Datapath == Ion
+autocmd BufNewFile,BufRead *.dp set ft=ion
+
 " I like my json raw and uncut
 let g:vim_json_syntax_conceal = 0
 
