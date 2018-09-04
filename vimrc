@@ -26,7 +26,6 @@ set sts=4
 set shiftwidth=4
 set backspace=indent,eol,start
 set hlsearch
-set hidden
 set wrap
 set nofoldenable
 set nomodeline     " modelines are a useless security hole
@@ -133,6 +132,10 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=1
 
+" Racer
+set hidden
+let g:racer_cmd = "/path/to/racer/bin"
+
 " Tabs are load bearing in makefiles
 autocmd FileType make setlocal noexpandtab
 
@@ -186,18 +189,6 @@ imap <S-Tab> <Esc><<i
 "http://vim-latex.sourceforge.net/documentation/latex-suite/recommended-settings.html
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
-
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 set tags=tags;/     " Traverse directory upward when looking for tags
 
