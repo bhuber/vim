@@ -111,3 +111,6 @@
 [submodule "bundle/VimIon"]
 	path = bundle/VimIon
 	url = ssh://git.amazon.com:2222/pkg/VimIon
+[submodule "bundle/vim-haskell-indent"]
+	path = bundle/vim-haskell-indent
+	url = https://github.com/itchyny/vim-haskell-indent.git
