@@ -139,12 +139,12 @@ let g:racer_cmd = "/path/to/racer/bin"
 " Tabs are load bearing in makefiles
 autocmd FileType make setlocal noexpandtab
 
-" Set html files to have 2 space tabs
-augroup myHtml
+" Set some files to have 2 space tabs
+augroup twoSpace
     au!
-    au FileType html,htmldjango,ion,dp setlocal ts=2
-    au FileType html,htmldjango,ion,dp setlocal sts=2
-    au FileType html,htmldjango,ion,dp setlocal sw=2
+    au FileType html,htmldjango,ion,dp,yaml setlocal ts=2
+    au FileType html,htmldjango,ion,dp,yaml setlocal sts=2
+    au FileType html,htmldjango,ion,dp,yaml setlocal sw=2
 augroup END
 
 " COQ stuff
