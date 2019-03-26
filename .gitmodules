@@ -49,7 +49,7 @@
 	url = https://github.com/vim-scripts/TaskList.vim.git
     branch = master
 [submodule "bundle/nerdtree"]
-	path = pack/bundle/start/nerdtree
+	path = pack/bundle/opt/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
     branch = master
 [submodule "bundle/ropevim"]
