@@ -1,13 +1,8 @@
 let g:pep8_map = ''
-let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo", "python-mode", "vim-javascript", "coquille", "ultisnips"]
 
 set background=dark
 
-" Pathogen load
 filetype off
-execute pathogen#infect()
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
 filetype plugin indent on
 
 colorscheme solarized
@@ -38,7 +33,7 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.swp,*.bak,*.pyc,*.class,*/workspace/**/build
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/workspace/*/build
 set visualbell
 set ttyfast
 set ruler
@@ -116,6 +111,7 @@ map <leader>n :NERDTreeToggle<CR>
 " Python-mode overrides <Leader>b
 noremap <Leader>t :CommandT<CR>
 noremap <Leader>b :CommandTBuffer<CR>
+let g:CommandTWildIgnore=&wildignore . ",*/build"
 
 let g:ropevim_enable_shortcuts = 1
 
@@ -197,3 +193,15 @@ noremap <C-TAB> :bnext<CR>
 noremap <C-S-TAB> :bprev<CR>
 
 set relativenumber
+
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+"let &t_SI = "\e[6 q"
+"let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+"augroup myCmds
+"au!
+"autocmd VimEnter * silent !echo -ne "\e[2 q"
+"augroup END
