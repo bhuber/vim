@@ -1,11 +1,3 @@
-if has('vim_starting')
-    set nocompatible " Be iMproved
-endif
-
-" Find pathogen
-runtime bundle/pathogen/autoload/pathogen.vim
-
-
 """"""""""""""""""""""""""""""""""
 
 " # /apollo/env/envImprovement/var/vimruntimehook
@@ -15,13 +7,13 @@ runtime bundle/pathogen/autoload/pathogen.vim
 
 """"""""""""""""""""""""""""""""""
 
-let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
-    \"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree",
-    \"vim-airline",
-    \"pep8", "nerdtree",
-    \"latex-suite", "/apollo/env/envImprovement/vim/plugin",
-    \"/apollo/env/envImprovement/vim/ftplugin", "Perforce"
-    \]
+"let g:pathogen_disabled = ["ropevim", "minibufexpl", "supertab", "snippets", "gundo",
+    "\"python-mode", "vim-javascript", "coquille", "snipmate", "ultisnips", "NerdTree",
+    "\"vim-airline",
+    "\"pep8", "nerdtree",
+    "\"latex-suite", "/apollo/env/envImprovement/vim/plugin",
+    "\"/apollo/env/envImprovement/vim/ftplugin", "Perforce"
+    "\]
 
 " Needs to be set for some amazon plugins
 let g:ApolloRoot = "/apollo/env/envImprovement"
@@ -31,14 +23,11 @@ let g:ApolloRoot = "/apollo/env/envImprovement"
 " let g:solarized_underline = 0
 " let g:solarized_termcolors = 256
 
-set background=dark		" Must be set before loading solarized
+let g:pep8_map = ''
 
 set background=dark
 
-" Pathogen load
 filetype off
-execute pathogen#infect("/apollo/env/envImprovement/vim/{}", "/apollo/env/envImprovement/vim/amazon/{}", "bundle/{}")
-"call pathogen#helptags()
 filetype plugin indent on
 
 colorscheme solarized
@@ -56,8 +45,8 @@ set sts=4
 set shiftwidth=4
 set backspace=indent,eol,start
 set hlsearch
-set hidden
 set wrap
+set nofoldenable
 set nomodeline     " modelines are a useless security hole
 
 set encoding=utf-8
@@ -70,10 +59,11 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=list:longest
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,*/workspace/*/build
 set visualbell
 set ttyfast
 set ruler
+set cursorline
 set laststatus=2
 set relativenumber
 
@@ -168,6 +158,7 @@ map <leader>r :RopeRename<CR>
 " Python-mode overrides <Leader>b
 noremap <Leader>t :CommandT<CR>
 noremap <Leader>b :CommandTBuffer<CR>
+let g:CommandTWildIgnore=&wildignore . ",*/build"
 
 let g:ropevim_enable_shortcuts = 1
 
@@ -212,6 +203,10 @@ let g:expand_region_text_objects = {
       \ 'ie'  :0,
       \ }
 
+" Racer
+set hidden
+let g:racer_cmd = "/path/to/racer/bin"
+
 " Tabs are load bearing in makefiles
 autocmd FileType make setlocal noexpandtab
 
@@ -219,12 +214,12 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType ion setlocal noexpandtab
 au BufRead,BufNewFile *.dp setfiletype ion
 
-" Set html files to have 2 space tabs
-augroup myHtml
+" Set some files to have 2 space tabs
+augroup twoSpace
     au!
-    au FileType html,htmldjango,ion,dp setlocal ts=2
-    au FileType html,htmldjango,ion,dp setlocal sts=2
-    au FileType html,htmldjango,ion,dp setlocal sw=2
+    au FileType html,htmldjango,ion,dp,yaml setlocal ts=2
+    au FileType html,htmldjango,ion,dp,yaml setlocal sts=2
+    au FileType html,htmldjango,ion,dp,yaml setlocal sw=2
 augroup END
 
 " COQ stuff
@@ -239,6 +234,9 @@ let g:CoqIDEDefaultMap = 1
 
 " Set json ft to json so vim-json recognizes it
 autocmd BufNewFile,BufRead *.json set ft=json
+
+" Datapath == Ion
+autocmd BufNewFile,BufRead *.dp set ft=ion
 
 " I like my json raw and uncut
 let g:vim_json_syntax_conceal = 0
@@ -268,18 +266,6 @@ imap <S-Tab> <Esc><<i
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-
 set tags=tags;/     " Traverse directory upward when looking for tags
 
 " Buffer switching
@@ -308,3 +294,15 @@ let g:expand_region_text_objects_ion = {
 " Due to a vim bug this must be set at the end of vimrc
 set relativenumber
 set t_ut=
+
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+"let &t_SI = "\e[6 q"
+"let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+"augroup myCmds
+"au!
+"autocmd VimEnter * silent !echo -ne "\e[2 q"
+"augroup END

@@ -1,126 +1,113 @@
 [submodule "bundle/fugitive"]
-	path = bundle/fugitive
+	path = pack/bundle/start/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
     branch = master
 [submodule "bundle/snipmate"]
-	path = bundle/snipmate
+	path = pack/bundle/start/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
     branch = master
 [submodule "bundle/surround"]
-	path = bundle/surround
+	path = pack/bundle/start/surround
 	url = https://github.com/tpope/vim-surround.git
     branch = master
 [submodule "bundle/git"]
-	path = bundle/git
+	path = pack/bundle/start/git
 	url = https://github.com/tpope/vim-git.git
     branch = master
 [submodule "bundle/supertab"]
-	path = bundle/supertab
+	path = pack/bundle/opt/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url = https://github.com/sontek/minibufexpl.vim.git
     branch = master
 [submodule "bundle/command-t"]
-	path = bundle/command-t
+	path = pack/bundle/start/command-t
 	url = https://github.com/wincent/Command-T.git
-[submodule "pyflakes-pathogen"]
-	path = pyflakes-pathogen
-	url = https://github.com/mitechie/pyflakes-pathogen.git
 [submodule "bundle/gundo"]
-	path = bundle/gundo
+	path = pack/bundle/opt/gundo
 	url = https://github.com/sjl/gundo.vim.git
     branch = master
 [submodule "bundle/pydoc"]
-	path = bundle/pydoc
+	path = pack/bundle/start/pydoc
 	url = https://github.com/fs111/pydoc.vim.git
     branch = master
 [submodule "bundle/pep8"]
-	path = bundle/pep8
+	path = pack/bundle/start/pep8
 	url = https://github.com/vim-scripts/pep8.git
     branch = master
 [submodule "bundle/py.test"]
-	path = bundle/py.test
+	path = pack/bundle/start/py.test
 	url = https://github.com/alfredodeza/pytest.vim.git
     branch = master
 [submodule "bundle/makegreen"]
-	path = bundle/makegreen
+	path = pack/bundle/start/makegreen
 	url = https://github.com/reinh/vim-makegreen
     branch = master
 [submodule "bundle/tasklist"]
-	path = bundle/tasklist
+	path = pack/bundle/start/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
     branch = master
 [submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
+	path = pack/bundle/opt/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
     branch = master
 [submodule "bundle/ropevim"]
-	path = bundle/ropevim
+	path = pack/bundle/opt/ropevim
 	url = https://github.com/python-rope/ropevim
     branch = master
 [submodule "bundle/commentary"]
-	path = bundle/commentary
+	path = pack/bundle/start/commentary
 	url = https://github.com/tpope/vim-commentary.git
     branch = master
 [submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
+	path = pack/bundle/opt/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
     branch = master
 [submodule "bundle/vim-javascript"]
-	path = bundle/vim-javascript
+	path = pack/bundle/opt/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
     branch = master
 [submodule "bundle/handlebars"]
-	path = bundle/handlebars
+	path = pack/bundle/start/handlebars
 	url = git://github.com/nono/vim-handlebars.git
     branch = master
 [submodule "bundle/python-mode"]
-	path = bundle/python-mode
+	path = pack/bundle/opt/python-mode
 	url = git://github.com/klen/python-mode.git
     branch = master
 [submodule "bundle/vim-python-pep8-indent"]
-	path = bundle/vim-python-pep8-indent
+	path = pack/bundle/start/vim-python-pep8-indent
 	url = https://github.com/hynek/vim-python-pep8-indent.git
     branch = master
 [submodule "bundle/syntastic"]
-	path = bundle/syntastic
+	path = pack/bundle/start/syntastic
 	url = https://github.com/scrooloose/syntastic.git
     branch = master
 [submodule "bundle/vim-ansible-yaml"]
-	path = bundle/vim-ansible-yaml
+	path = pack/bundle/start/vim-ansible-yaml
 	url = git://github.com/chase/vim-ansible-yaml.git
 [submodule "bundle/vim-json"]
-	path = bundle/vim-json
+	path = pack/bundle/start/vim-json
 	url = git@github.com:elzr/vim-json.git
 [submodule "bundle/coq.vim"]
-	path = bundle/coq.vim
+	path = pack/bundle/start/coq.vim
 	url = https://github.com/jvoorhis/coq.vim.git
 [submodule "bundle/coquille"]
-	path = bundle/coquille
+	path = pack/bundle/opt/coquille
 	url = https://github.com/trefis/coquille.git
 [submodule "bundle/vimbufsync"]
-	path = bundle/vimbufsync
+	path = pack/bundle/start/vimbufsync
 	url = git@github.com:def-lkb/vimbufsync.git
 [submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
+	path = pack/bundle/start/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/pathogen"]
-	path = bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-    branch = master
-[submodule "bundle/vim-airline"]
-	path = bundle/vim-airline
-	url = https://github.com/bling/vim-airline
-[submodule "bundle/vim-sleuth"]
-	path = bundle/vim-sleuth
-	url = git://github.com/tpope/vim-sleuth.git
-[submodule "bundle/vim-expand-region"]
-	path = bundle/vim-expand-region
-	url = git@github.com:terryma/vim-expand-region.git
-[submodule "bundle/vim-fusion"]
-	path = bundle/vim-fusion
-	url = ssh://git.amazon.com:2222/pkg/VimFusion
-[submodule "bundle/DatapathCommunityVimPlugin"]
-	path = bundle/DatapathCommunityVimPlugin
-	url = ssh://git.amazon.com:2222/pkg/DatapathCommunityVimPlugin
+#[submodule "bundle/DatapathCommunityVimPlugin"]
+    #path = bundle/DatapathCommunityVimPlugin
+    #url = ssh://git.amazon.com:2222/pkg/DatapathCommunityVimPlugin
+#[submodule "bundle/VimIon"]
+    #path = bundle/VimIon
+    #url = ssh://git.amazon.com:2222/pkg/VimIon
+[submodule "bundle/vim-haskell-indent"]
+	path = pack/bundle/start/vim-haskell-indent
+	url = https://github.com/itchyny/vim-haskell-indent.git
