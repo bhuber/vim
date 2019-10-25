@@ -55,6 +55,7 @@ set foldlevel=99
 set formatoptions+=qn1
 
 set colorcolumn=100
+set textwidth=100
 
 if v:version >= 703
     set undofile                " keep a persistent backup file
