@@ -62,20 +62,22 @@
     branch = master
 [submodule "bundle/ultisnips"]
 	path = pack/bundle/opt/ultisnips
-	url = git://github.com/SirVer/ultisnips.git
+	url = https://github.com/SirVer/ultisnips.git
     branch = master
+    # update = none
 [submodule "bundle/vim-javascript"]
 	path = pack/bundle/opt/vim-javascript
-	url = git://github.com/pangloss/vim-javascript.git
+	url = https://github.com/pangloss/vim-javascript.git
     branch = master
 [submodule "bundle/handlebars"]
 	path = pack/bundle/start/handlebars
-	url = git://github.com/nono/vim-handlebars.git
+	url = https://github.com/nono/vim-handlebars.git
     branch = master
 [submodule "bundle/python-mode"]
 	path = pack/bundle/opt/python-mode
-	url = git://github.com/klen/python-mode.git
+	url = https://github.com/klen/python-mode.git
     branch = master
+    # update = none
 [submodule "bundle/vim-python-pep8-indent"]
 	path = pack/bundle/start/vim-python-pep8-indent
 	url = https://github.com/hynek/vim-python-pep8-indent.git
@@ -86,7 +88,7 @@
     branch = master
 [submodule "bundle/vim-ansible-yaml"]
 	path = pack/bundle/start/vim-ansible-yaml
-	url = git://github.com/chase/vim-ansible-yaml.git
+	url = https://github.com/chase/vim-ansible-yaml.git
 [submodule "bundle/vim-json"]
 	path = pack/bundle/start/vim-json
 	url = git@github.com:elzr/vim-json.git
@@ -101,13 +103,7 @@
 	url = git@github.com:def-lkb/vimbufsync.git
 [submodule "bundle/vim-colors-solarized"]
 	path = pack/bundle/start/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-#[submodule "bundle/DatapathCommunityVimPlugin"]
-    #path = bundle/DatapathCommunityVimPlugin
-    #url = ssh://git.amazon.com:2222/pkg/DatapathCommunityVimPlugin
-#[submodule "bundle/VimIon"]
-    #path = bundle/VimIon
-    #url = ssh://git.amazon.com:2222/pkg/VimIon
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-haskell-indent"]
 	path = pack/bundle/start/vim-haskell-indent
 	url = https://github.com/itchyny/vim-haskell-indent.git
