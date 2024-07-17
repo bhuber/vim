@@ -91,7 +91,7 @@
 	url = https://github.com/chase/vim-ansible-yaml.git
 [submodule "bundle/vim-json"]
 	path = pack/bundle/start/vim-json
-	url = git@github.com:elzr/vim-json.git
+	url = https://github.com/elzr/vim-json.git
 [submodule "bundle/coq.vim"]
 	path = pack/bundle/start/coq.vim
 	url = https://github.com/jvoorhis/coq.vim.git
@@ -100,7 +100,7 @@
 	url = https://github.com/trefis/coquille.git
 [submodule "bundle/vimbufsync"]
 	path = pack/bundle/start/vimbufsync
-	url = git@github.com:def-lkb/vimbufsync.git
+	url = https://github.com/def-lkb/vimbufsync.git
 [submodule "bundle/vim-colors-solarized"]
 	path = pack/bundle/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
