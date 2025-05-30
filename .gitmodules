@@ -107,3 +107,6 @@
 [submodule "bundle/vim-haskell-indent"]
 	path = pack/bundle/start/vim-haskell-indent
 	url = https://github.com/itchyny/vim-haskell-indent.git
+[submodule "pack/bundle/start/vim-hcl"]
+	path = pack/bundle/start/vim-hcl
+	url = https://github.com/jvirtanen/vim-hcl.git

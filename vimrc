@@ -5,8 +5,10 @@ set background=dark
 filetype off
 filetype plugin indent on
 
-colorscheme solarized
-" colorscheme default
+let g:solarized_termcolors=256
+"colorscheme solarized
+"colorscheme default
+colorscheme elflord
 syntax on
 syntax sync minlines=500
 hi Normal ctermbg=NONE
@@ -55,7 +57,7 @@ set foldlevel=99
 set formatoptions+=qn1
 
 set colorcolumn=100
-set textwidth=100
+"set textwidth=100
 
 if v:version >= 703
     set undofile                " keep a persistent backup file
@@ -128,6 +130,8 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=1
+
+let g:go_fmt_autosave = 0
 
 " Racer
 set hidden
