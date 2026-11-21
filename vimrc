@@ -59,9 +59,16 @@ set formatoptions+=qn1
 set colorcolumn=100
 "set textwidth=100
 
-if v:version >= 703
-    set undofile                " keep a persistent backup file
-    set undodir=~/.vim/undo,~/tmp,/tmp
+set undofile                " keep a persistent backup file
+set undodir=~/.vim/undo,~/tmp,/tmp
+
+if has('clipboard_provider') && !has('clipboard_working')
+      \ && !empty(globpath(&packpath, 'pack/dist/opt/osc52', 0, 1))
+    packadd osc52
+    set clipmethod+=osc52
+    let g:osc52_force_avail = 1      " auto-detect (DA1 query) is unreliable under tmux
+    let g:osc52_disable_paste = 1    " iTerm2 paste via OSC 52 would hang vim
+    set clipboard=unnamedplus        " every yank/delete also goes to the local clipboard
 endif
 
 " Enable magic searches
